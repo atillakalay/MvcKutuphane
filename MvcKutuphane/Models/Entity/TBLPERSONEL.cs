@@ -7,6 +7,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
+
 namespace MvcKutuphane.Models.Entity
 {
     using System;
@@ -15,6 +17,7 @@ namespace MvcKutuphane.Models.Entity
     public partial class TBLPERSONEL
     {
         public byte ID { get; set; }
+        [Required (ErrorMessage = "Personel adý boþ býrakýlamaz !")]
         public string PERSONEL { get; set; }
     }
 }
