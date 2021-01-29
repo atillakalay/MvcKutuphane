@@ -20,6 +20,7 @@
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLHAREKET_TBLUYELER" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLKİTAP_TBLKATEGORI" ManuallyRouted="false" />
         <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLKİTAP_TBLYAZAR" ManuallyRouted="false" />
+        <AssociationConnector Association="DBKUTUPHANEModel.FK_TBLHAREKET_TBLPERSONEL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

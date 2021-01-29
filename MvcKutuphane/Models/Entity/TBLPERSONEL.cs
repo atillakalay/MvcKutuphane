@@ -7,8 +7,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.ComponentModel.DataAnnotations;
-
 namespace MvcKutuphane.Models.Entity
 {
     using System;
@@ -16,8 +14,16 @@ namespace MvcKutuphane.Models.Entity
     
     public partial class TBLPERSONEL
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLPERSONEL()
+        {
+            this.TBLHAREKET = new HashSet<TBLHAREKET>();
+        }
+    
         public byte ID { get; set; }
-        [Required (ErrorMessage = "Personel adý boþ býrakýlamaz !")]
         public string PERSONEL { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLHAREKET> TBLHAREKET { get; set; }
     }
 }

@@ -1,0 +1,37 @@
+﻿@model MvcKutuphane.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "Oduncver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kitap Ekleme Sayfası</h2>
+<br />
+<form class="form form-group" method="post">
+    <div></div>
+    <div style="margin-top: 15px">
+        <label>Üye Id</label>
+        @Html.TextBoxFor(X => X.UYE, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap Id</label>
+        @Html.TextBoxFor(X => X.KITAP, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Personel Id</label>
+        @Html.TextBoxFor(X => X.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap Veriliş Tarihi</label>
+        <input name="ALISTARIH" value="@DateTime.Now.ToShortDateString()" class="form-control" />
+    </div>
+    <div style="margin-top: 15px">
+        <label>Kitap İade Tarihi</label>
+        <input name="IADETARIH" type="date" class="form-control" />
+    </div>
+
+
+    <div style="margin-top: 15px">
+        <button class="btn btn-info">Kitap Ver</button>
+    </div>
+</form>
+
