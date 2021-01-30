@@ -52,14 +52,18 @@ namespace MvcKutuphane.Controllers
         public ActionResult UyeGuncelle(TBLUYELER p)
         {
             var uye = db.TBLUYELER.Find(p.ID);
-            uye.AD = p.AD;
-            uye.SOYAD = p.SOYAD;
-            uye.MAIL = p.MAIL;
-            uye.KULLANICIADI = p.KULLANICIADI;
-            uye.SIFRE = p.SIFRE;
-            uye.OKUL = p.OKUL;
-            uye.TELEFON = p.TELEFON;
-            uye.FOTOGRAF = p.FOTOGRAF;
+            if (uye != null)
+            {
+                uye.AD = p.AD;
+                uye.SOYAD = p.SOYAD;
+                uye.MAIL = p.MAIL;
+                uye.KULLANICIADI = p.KULLANICIADI;
+                uye.SIFRE = p.SIFRE;
+                uye.OKUL = p.OKUL;
+                uye.TELEFON = p.TELEFON;
+                uye.FOTOGRAF = p.FOTOGRAF;
+            }
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

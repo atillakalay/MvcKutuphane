@@ -1,0 +1,47 @@
+﻿@model MvcKutuphane.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "Odunciade";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
+    <div style="margin-bottom: 15px"></div>
+    <div class="form form-group">
+        <br />
+        <label>KİTAP AD</label>
+        @Html.TextBoxFor(k => k.TBLKİTAP.AD, new { @class = "form-control" })
+    </div>
+    <div class="form form-group">
+        <br />
+        <label>ÜYE AD</label>
+        @Html.TextBoxFor(k => k.TBLUYELER.AD, new { @class = "form-control" })
+    </div>
+    <div class="form form-group">
+        <br />
+        <label>PERSONEL AD</label>
+        @Html.TextBoxFor(k => k.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
+    </div>
+    <div class="form form-group">
+        <br />
+        <label>ALIŞ TARİH</label>
+        @Html.TextBoxFor(k => k.ALISTARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form form-group">
+        <br />
+        <label>İAEDE TARİH</label>
+        @Html.TextBoxFor(k => k.IADETARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+    <div class="form form-group">
+        <br />
+        <label>ÜYENİN GETİRDİĞİ TARİH</label>
+        @*<input name="UYEGETIRTARIH" type="text" value="@DateTime.Now.ToShortDateString()" class="form-control" />*@
+        @Html.TextBoxFor(x => x.UYEGETIRTARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div>
+        <button class="btn btn-primary">Ödünç Kitabi Geri Al</button>
+    </div>
+}
+
+

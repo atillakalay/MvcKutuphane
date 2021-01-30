@@ -28,5 +28,26 @@ namespace MvcKutuphane.Controllers
             dbkutuphane.SaveChanges();
             return RedirectToAction("Oduncver");
         }
+
+        public ActionResult Odunciade(int id)
+        {
+            var iade = dbkutuphane.TBLHAREKET.Find(id);
+            return View("Odunciade", iade);
+        }
+
+        public ActionResult OduncGuncelle(TBLHAREKET p)
+        {
+            var iade = dbkutuphane.TBLHAREKET.Find(p.ID);
+
+
+            if (iade != null)
+            {
+                iade.UYEGETIRTARIH = System.DateTime.Now;
+                iade.ISLEMDURUM = true;
+            }
+
+            dbkutuphane.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

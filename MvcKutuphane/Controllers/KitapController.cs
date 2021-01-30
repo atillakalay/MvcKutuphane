@@ -77,6 +77,7 @@ namespace MvcKutuphane.Controllers
             var yzr = db.TBLYAZAR.Where(x => x.ID == p.TBLYAZAR.ID).FirstOrDefault();
             kitap.KATEGORI = ktg.ID;
             kitap.YAZAR = yzr.ID;
+            kitap.DURUM = true;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
