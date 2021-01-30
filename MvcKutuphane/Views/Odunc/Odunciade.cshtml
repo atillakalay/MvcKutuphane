@@ -6,42 +6,34 @@
 
 @using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
 {
-    <div style="margin-bottom: 15px"></div>
-    <div class="form form-group">
-        <br />
-        <label>KİTAP AD</label>
-        @Html.TextBoxFor(k => k.TBLKİTAP.AD, new { @class = "form-control" })
-    </div>
-    <div class="form form-group">
-        <br />
-        <label>ÜYE AD</label>
-        @Html.TextBoxFor(k => k.TBLUYELER.AD, new { @class = "form-control" })
-    </div>
-    <div class="form form-group">
-        <br />
-        <label>PERSONEL AD</label>
-        @Html.TextBoxFor(k => k.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
-    </div>
-    <div class="form form-group">
-        <br />
-        <label>ALIŞ TARİH</label>
-        @Html.TextBoxFor(k => k.ALISTARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
-    </div>
-    <div class="form form-group">
-        <br />
-        <label>İAEDE TARİH</label>
-        @Html.TextBoxFor(k => k.IADETARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
-    </div>
-    <div class="form form-group">
-        <br />
-        <label>ÜYENİN GETİRDİĞİ TARİH</label>
-        @*<input name="UYEGETIRTARIH" type="text" value="@DateTime.Now.ToShortDateString()" class="form-control" />*@
-        @Html.TextBoxFor(x => x.UYEGETIRTARIH, "{0:dd.MM.yyyy}", new { @class = "form-control" })
-    </div>
+    <div style=" margin-bottom:15px"></div>
+    <div class="form-group">
 
+        @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+        <br />
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(k => k.TBLKİTAP.AD, new { @class = "form-control" })
+        <br />
+        <label>Üye</label>
+        @Html.TextBoxFor(k => k.TBLUYELER.AD, new { @class = "form-control" })
+        <br />
+        <label>Personel</label>
+        @Html.TextBoxFor(k => k.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
+        <br />
+        <label>Alış tarihi</label>
+        @Html.TextBoxFor(k => k.ALISTARIH, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Normal İade tarihi</label>
+        @Html.TextBoxFor(k => k.IADETARIH, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+        <br />
+        <label>Üyenin Getirdiği Tarih</label>
+        <input type="text" class="form-control" name="UYEGETIRTARIH" value="@DateTime.Now.ToShortDateString()" />
+        <br />
+        <label>Geç Gelen Gün Sayısı</label>
+        <input type="text" class="form-control" id="Gecinput" value="@ViewBag.dgr" />
+
+    </div>
     <div>
-        <button class="btn btn-primary">Ödünç Kitabi Geri Al</button>
+        <button class="btn btn-group" style="background-color:#64d8ca; color:white">Ödünç Kitabı Geri Al</button>
     </div>
 }
-
-

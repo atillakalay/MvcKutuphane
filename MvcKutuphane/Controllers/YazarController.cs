@@ -45,9 +45,13 @@ namespace MvcKutuphane.Controllers
         public ActionResult YazarGuncelle(TBLYAZAR p)
         {
             var yazar = db.TBLYAZAR.Find(p.ID);
-            yazar.AD = p.AD;
-            yazar.SOYAD = p.SOYAD;
-            yazar.DETAY = p.DETAY;
+            if (yazar != null)
+            {
+                yazar.AD = p.AD;
+                yazar.SOYAD = p.SOYAD;
+                yazar.DETAY = p.DETAY;
+            }
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

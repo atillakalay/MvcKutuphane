@@ -134,7 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IslemController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\KitapController.cs" />
     <Compile Include="Controllers\OduncController.cs" />
@@ -260,6 +260,7 @@
     <Content Include="Views\Odunc\Oduncver.cshtml" />
     <Content Include="Views\Odunc\Index.cshtml" />
     <Content Include="Views\Odunc\Odunciade.cshtml" />
+    <Content Include="Views\Islem\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

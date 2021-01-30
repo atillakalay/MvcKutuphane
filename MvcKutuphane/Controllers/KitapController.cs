@@ -69,15 +69,19 @@ namespace MvcKutuphane.Controllers
         public ActionResult KitapGuncelle(TBLKİTAP p)
         {
             var kitap = db.TBLKİTAP.Find(p.ID);
-            kitap.AD = p.AD;
-            kitap.BASIMYIL = p.BASIMYIL;
-            kitap.SAYFA = p.SAYFA;
-            kitap.YAYINEVI = p.YAYINEVI;
-            var ktg = db.TBLKATEGORI.Where(x => x.ID == p.TBLKATEGORI.ID).FirstOrDefault();
-            var yzr = db.TBLYAZAR.Where(x => x.ID == p.TBLYAZAR.ID).FirstOrDefault();
-            kitap.KATEGORI = ktg.ID;
-            kitap.YAZAR = yzr.ID;
-            kitap.DURUM = true;
+            if (kitap != null)
+            {
+                kitap.AD = p.AD;
+                kitap.BASIMYIL = p.BASIMYIL;
+                kitap.SAYFA = p.SAYFA;
+                kitap.YAYINEVI = p.YAYINEVI;
+                var ktg = db.TBLKATEGORI.Where(x => x.ID == p.TBLKATEGORI.ID).FirstOrDefault();
+                var yzr = db.TBLYAZAR.Where(x => x.ID == p.TBLYAZAR.ID).FirstOrDefault();
+                kitap.KATEGORI = ktg.ID;
+                kitap.YAZAR = yzr.ID;
+                kitap.DURUM = true;
+            }
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

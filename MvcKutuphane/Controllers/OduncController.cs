@@ -13,7 +13,7 @@ namespace MvcKutuphane.Controllers
         private DBKUTUPHANEEntities dbkutuphane = new DBKUTUPHANEEntities();
         public ActionResult Index()
         {
-            var degerler = dbkutuphane.TBLHAREKET.ToList();
+            var degerler = dbkutuphane.TBLHAREKET.Where(x=>x.ISLEMDURUM==false).ToList();
             return View(degerler);
         }
         [HttpGet]
@@ -29,10 +29,14 @@ namespace MvcKutuphane.Controllers
             return RedirectToAction("Oduncver");
         }
 
-        public ActionResult Odunciade(int id)
+        public ActionResult Odunciade(TBLHAREKET p)
         {
-            var iade = dbkutuphane.TBLHAREKET.Find(id);
-            return View("Odunciade", iade);
+            var odn = dbkutuphane.TBLHAREKET.Find(p.ID);
+            DateTime d1 = DateTime.Parse(odn.IADETARIH.ToString());
+            DateTime d2 = Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            TimeSpan d3 = d2 - d1;
+            ViewBag.dgr = d3.TotalDays;
+            return View("Odunciade", odn);
         }
 
         public ActionResult OduncGuncelle(TBLHAREKET p)
@@ -49,5 +53,6 @@ namespace MvcKutuphane.Controllers
             dbkutuphane.SaveChanges();
             return RedirectToAction("Index");
         }
+     
     }
 }
