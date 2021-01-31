@@ -9,7 +9,7 @@ namespace MvcKutuphane.Controllers
     public class YazarController : Controller
     {
         // GET: Yazar
-        private DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
+        private DBKUTUPHANEEntities2 db = new DBKUTUPHANEEntities2();
         public ActionResult Index()
         {
             var degerler = db.TBLYAZAR.ToList();

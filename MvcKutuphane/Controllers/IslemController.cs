@@ -10,7 +10,7 @@ namespace MvcKutuphane.Controllers
 
     public class IslemController : Controller
     {
-        private DBKUTUPHANEEntities dBKUTUPHANE = new DBKUTUPHANEEntities();
+        private DBKUTUPHANEEntities2 dBKUTUPHANE = new DBKUTUPHANEEntities2();
         // GET: Islem
         public ActionResult Index()
         {

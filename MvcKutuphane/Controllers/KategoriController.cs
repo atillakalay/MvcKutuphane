@@ -9,7 +9,7 @@ namespace MvcKutuphane.Controllers
     public class KategoriController : Controller
     {
         // GET: Kategori
-        private DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
+        private DBKUTUPHANEEntities2 db = new DBKUTUPHANEEntities2();
         public ActionResult Index()
         {
             var degerler = db.TBLKATEGORI.ToList();

@@ -12,10 +12,10 @@ namespace MvcKutuphane.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TBLKİTAP
+    public partial class TBLKITAP
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TBLKİTAP()
+        public TBLKITAP()
         {
             this.TBLHAREKET = new HashSet<TBLHAREKET>();
         }
@@ -28,6 +28,7 @@ namespace MvcKutuphane.Models.Entity
         public string YAYINEVI { get; set; }
         public string SAYFA { get; set; }
         public Nullable<bool> DURUM { get; set; }
+        public string KITAPRESIM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLHAREKET> TBLHAREKET { get; set; }

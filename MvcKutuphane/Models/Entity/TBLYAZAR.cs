@@ -17,7 +17,7 @@ namespace MvcKutuphane.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TBLYAZAR()
         {
-            this.TBLKİTAP = new HashSet<TBLKİTAP>();
+            this.TBLKITAP = new HashSet<TBLKITAP>();
         }
     
         public int ID { get; set; }
@@ -26,6 +26,6 @@ namespace MvcKutuphane.Models.Entity
         public string DETAY { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBLKİTAP> TBLKİTAP { get; set; }
+        public virtual ICollection<TBLKITAP> TBLKITAP { get; set; }
     }
 }

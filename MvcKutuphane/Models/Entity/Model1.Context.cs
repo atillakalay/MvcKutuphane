@@ -13,10 +13,10 @@ namespace MvcKutuphane.Models.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBKUTUPHANEEntities : DbContext
+    public partial class DBKUTUPHANEEntities2 : DbContext
     {
-        public DBKUTUPHANEEntities()
-            : base("name=DBKUTUPHANEEntities")
+        public DBKUTUPHANEEntities2()
+            : base("name=DBKUTUPHANEEntities2")
         {
         }
     
@@ -30,9 +30,11 @@ namespace MvcKutuphane.Models.Entity
         public virtual DbSet<TBLHAREKET> TBLHAREKET { get; set; }
         public virtual DbSet<TBLKASA> TBLKASA { get; set; }
         public virtual DbSet<TBLKATEGORI> TBLKATEGORI { get; set; }
-        public virtual DbSet<TBLKİTAP> TBLKİTAP { get; set; }
+        public virtual DbSet<TBLKITAP> TBLKITAP { get; set; }
         public virtual DbSet<TBLPERSONEL> TBLPERSONEL { get; set; }
         public virtual DbSet<TBLUYELER> TBLUYELER { get; set; }
         public virtual DbSet<TBLYAZAR> TBLYAZAR { get; set; }
+        public virtual DbSet<TBLHAKKIMIZDA> TBLHAKKIMIZDA { get; set; }
+        public virtual DbSet<TBLILETISIM> TBLILETISIM { get; set; }
     }
 }

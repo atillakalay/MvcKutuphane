@@ -10,7 +10,7 @@ namespace MvcKutuphane.Controllers
     public class OduncController : Controller
     {
         // GET: Odunc
-        private DBKUTUPHANEEntities dbkutuphane = new DBKUTUPHANEEntities();
+        private DBKUTUPHANEEntities2 dbkutuphane = new DBKUTUPHANEEntities2();
         public ActionResult Index()
         {
             var degerler = dbkutuphane.TBLHAREKET.Where(x=>x.ISLEMDURUM==false).ToList();

@@ -10,10 +10,10 @@ namespace MvcKutuphane.Controllers
     public class KitapController : Controller
     {
         // GET: Kitap
-        private DBKUTUPHANEEntities db = new DBKUTUPHANEEntities();
+        private DBKUTUPHANEEntities2 db = new DBKUTUPHANEEntities2();
         public ActionResult Index(string p)
         {
-            var kitaplar = from x in db.TBLKİTAP select x;
+            var kitaplar = from x in db.TBLKITAP select x;
             if (!string.IsNullOrEmpty(p))
             {
                 kitaplar = kitaplar.Where(m => m.AD.Contains(p));
@@ -35,21 +35,21 @@ namespace MvcKutuphane.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult KitapEkle(TBLKİTAP p)
+        public ActionResult KitapEkle(TBLKITAP p)
         {
             var kategori = db.TBLKATEGORI.Where(k => k.ID == p.TBLKATEGORI.ID).FirstOrDefault();
             var yazar = db.TBLYAZAR.Where(k => k.ID == p.TBLYAZAR.ID).FirstOrDefault();
             p.TBLKATEGORI = kategori;
             p.TBLYAZAR = yazar;
-            db.TBLKİTAP.Add(p);
+            db.TBLKITAP.Add(p);
             db.SaveChanges();
 
             return RedirectToAction("Index");
         }
         public ActionResult KitapSil(int id)
         {
-            var kitap = db.TBLKİTAP.Find(id);
-            db.TBLKİTAP.Remove(kitap);
+            var kitap = db.TBLKITAP.Find(id);
+            db.TBLKITAP.Remove(kitap);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -62,13 +62,13 @@ namespace MvcKutuphane.Controllers
                                            select new SelectListItem() { Text = x.AD + ' ' + x.SOYAD, Value = x.ID.ToString() }).ToList();
             ViewBag.dgr1 = deger1;
 
-            var kitap = db.TBLKİTAP.Find(id);
+            var kitap = db.TBLKITAP.Find(id);
             return View("KitapGetir", kitap);
         }
 
-        public ActionResult KitapGuncelle(TBLKİTAP p)
+        public ActionResult KitapGuncelle(TBLKITAP p)
         {
-            var kitap = db.TBLKİTAP.Find(p.ID);
+            var kitap = db.TBLKITAP.Find(p.ID);
             if (kitap != null)
             {
                 kitap.AD = p.AD;

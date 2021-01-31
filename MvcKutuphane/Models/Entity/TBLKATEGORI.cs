@@ -17,13 +17,13 @@ namespace MvcKutuphane.Models.Entity
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TBLKATEGORI()
         {
-            this.TBLKİTAP = new HashSet<TBLKİTAP>();
+            this.TBLKITAP = new HashSet<TBLKITAP>();
         }
     
         public byte ID { get; set; }
         public string AD { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TBLKİTAP> TBLKİTAP { get; set; }
+        public virtual ICollection<TBLKITAP> TBLKITAP { get; set; }
     }
 }
