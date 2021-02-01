@@ -277,6 +277,13 @@
     <Content Include="Template\web2\resimler\book5.jpg" />
     <Content Include="Template\web2\resimler\img1.jpg" />
     <Content Include="Template\web2\w3layouts-License.txt" />
+    <Content Include="Template\webhava\css\style.css" />
+    <Content Include="Template\webhava\images\bg.jpg" />
+    <Content Include="Template\webhava\images\img1.jpg" />
+    <Content Include="Template\webhava\index.html" />
+    <Content Include="Template\webhava\js\jquery-2.1.4.min.js" />
+    <Content Include="Template\webhava\js\skycons.js" />
+    <Content Include="Template\webhava\w3layouts-License.txt" />
     <Content Include="Template\web\.gitignore" />
     <Content Include="Template\web\css\freelancer.css" />
     <Content Include="Template\web\css\freelancer.min.css" />
@@ -395,6 +402,9 @@
     <Content Include="Template\web\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Views\Vitrin\Index.cshtml" />
     <Content Include="Views\Istatistik\Index.cshtml" />
+    <Content Include="Views\Istatistik\Hava.cshtml" />
+    <Content Include="Views\Istatistik\HavaKart.cshtml" />
+    <Content Include="Views\Istatistik\Galeri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
