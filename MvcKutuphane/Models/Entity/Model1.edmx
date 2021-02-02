@@ -199,6 +199,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="EnFazlaKitapYazar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaYayınevi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="EnFazlaYayınevis" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBKUTUPHANEModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLCEZALAR" EntityType="Self.TBLCEZALAR" Schema="dbo" store:Type="Tables" />
@@ -475,6 +478,9 @@
           </AssociationSet>
           <EntitySet Name="TBLHAKKIMIZDA" EntityType="DBKUTUPHANEModel.TBLHAKKIMIZDA" />
           <EntitySet Name="TBLILETISIM" EntityType="DBKUTUPHANEModel.TBLILETISIM" />
+          <FunctionImport Name="EnFazlaKitapYazar" ReturnType="Collection(String)" />
+          <FunctionImport Name="EnFazlaYayınevi" ReturnType="Collection(DBKUTUPHANEModel.EnFazlaYayınevi_Result)" />
+          <FunctionImport Name="EnFazlaYayınevis" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="TBLHAKKIMIZDA">
           <Key>
@@ -493,6 +499,10 @@
           <Property Name="KONU" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MESAJ" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="EnFazlaYayınevi_Result">
+          <Property Type="String" Name="YAYINEVI" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -620,6 +630,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlaKitapYazar" FunctionName="DBKUTUPHANEModel.Store.EnFazlaKitapYazar" />
+          <FunctionImportMapping FunctionImportName="EnFazlaYayınevi" FunctionName="DBKUTUPHANEModel.Store.EnFazlaYayınevi">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBKUTUPHANEModel.EnFazlaYayınevi_Result">
+                <ScalarProperty Name="YAYINEVI" ColumnName="YAYINEVI" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="EnFazlaYayınevis" FunctionName="DBKUTUPHANEModel.Store.EnFazlaYayınevis" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
