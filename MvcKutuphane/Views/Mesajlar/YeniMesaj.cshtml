@@ -1,0 +1,29 @@
+﻿@model MvcKutuphane.Models.Entity.TBLMESAJLAR
+@{
+    ViewBag.Title = "YeniMesaj";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+<h2>Personel Mesaj Oluştur</h2>
+<br />
+<form class="form form-group" method="post">
+    <div></div>
+    <div style="margin-top: 15px"></div>
+    <div>
+        <label style="font-weight: bold;">KİME</label>
+        @Html.TextBoxFor(x => x.ALICI, new { @class = "form-control" })
+    </div>
+    <div>
+        <label style="font-weight: bold;">KONU</label>
+        @Html.TextBoxFor(x => x.KONU, new { @class = "form-control" })
+    </div>
+    <div>
+        <label style="font-weight: bold;">İÇERİK</label>
+        @Html.TextAreaFor(x => x.ICERIK, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top: 15px">
+        <button class="btn btn-info">Gönder</button>
+    </div>
+</form>
+

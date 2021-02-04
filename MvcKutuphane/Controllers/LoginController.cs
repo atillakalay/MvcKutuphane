@@ -14,6 +14,7 @@ namespace MvcKutuphane.Controllers
         private DBKUTUPHANEEntities2 dbkutuphaneEntities2 = new DBKUTUPHANEEntities2();
         public ActionResult GirisYap()
         {
+
             return View();
         }
 
@@ -24,7 +25,11 @@ namespace MvcKutuphane.Controllers
             if (bilgiler != null)
             {
                 FormsAuthentication.SetAuthCookie(bilgiler.MAIL, false);
-                Session["Mail"] = bilgiler.MAIL.ToString();
+                Session["Mail"] = bilgiler.MAIL;
+                Session["Ad"] = bilgiler.AD;
+                Session["Soyad"] = bilgiler.SOYAD;
+
+
                 return RedirectToAction("Index", "Panelim");
             }
             else

@@ -31,5 +31,13 @@ namespace MvcKutuphane.Controllers
             dbkutuphaneEntities2.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult Kitaplarim()
+        {
+            var uyemail = (string)Session["Mail"];
+            var id = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail.ToString()).Select(z=>z.ID).FirstOrDefault();
+            var degerler = dbkutuphaneEntities2.TBLHAREKET.Where(x => x.UYE == id).ToList();
+            return View(degerler);
+        }
     }
 }
