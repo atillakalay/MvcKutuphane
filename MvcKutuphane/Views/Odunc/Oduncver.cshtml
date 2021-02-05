@@ -8,17 +8,17 @@
 <br />
 <form class="form form-group" method="post">
     <div></div>
-    <div style="margin-top: 15px">
-        <label>Üye Id</label>
-        @Html.TextBoxFor(X => X.UYE, new { @class = "form-control" })
+    <div style="margin-top:15px">
+        <label>Üye</label>
+        @Html.DropDownListFor(k => k.TBLUYELER.ID, (List<SelectListItem>)ViewBag.dgr1,new { @class = "form-control" })
     </div>
-    <div style="margin-top: 15px">
-        <label>Kitap Id</label>
-        @Html.TextBoxFor(X => X.KITAP, new { @class = "form-control" })
+    <div style="margin-top:15px">
+        <label>Kitap</label>
+        @Html.DropDownListFor(k => k.TBLKITAP.ID, (List<SelectListItem>)ViewBag.dgr2, new { @class = "form-control" })
     </div>
-    <div style="margin-top: 15px">
-        <label>Personel Id</label>
-        @Html.TextBoxFor(X => X.PERSONEL, new { @class = "form-control" })
+    <div style="margin-top:15px">
+        <label>Personel</label>
+        @Html.DropDownListFor(k => k.TBLPERSONEL.ID, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
     </div>
     <div style="margin-top: 15px">
         <label>Kitap Veriliş Tarihi</label>

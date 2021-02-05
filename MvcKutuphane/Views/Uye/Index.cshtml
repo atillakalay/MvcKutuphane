@@ -11,16 +11,15 @@
 <h2>Üyeler</h2>
 <br />
 <table class="table table-hover">
-    <tr>
+    <tr style=" background: #dedddb">
         <th>ID</th>
         <th>AD SOYAD</th>
         <th>MAİL</th>
-        <th>KULLANICI AD</th>
-        <th>ŞİFRE</th>
         <th>TELEFON</th>
         <th>OKUL</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>GEÇMİŞ</th>
 
     </tr>
     @foreach (var x in Model)
@@ -29,18 +28,17 @@
             <td>@x.ID</td>
             <td>@x.AD @x.SOYAD</td>
             <td>@x.MAIL</td>
-            <td>@x.KULLANICIADI</td>
-            <td>@x.SIFRE</td>
             <td>@x.TELEFON</td>
             <td>@x.OKUL</td>
             <td><a href="/Uye/UyeSil/@x.ID" class="btn btn-danger">Sil</a></td>
             <td><a href="/Uye/UyeGetir/@x.ID" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/Uye/UyeKitapGecmis/@x.ID" class="btn btn-default" style="background: #717782;color: white">Geçmiş</a></td>
 
         </tr>
     }
 </table>
 @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
-<a href="/Uye/UyeEkle/" class="btn btn-success">Yeni Üye Ekle</a>
+<a href="/Uye/UyeEkle/" class="btn btn-success">Ekle</a>
 
 
 

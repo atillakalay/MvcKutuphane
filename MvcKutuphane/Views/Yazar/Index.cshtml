@@ -11,9 +11,9 @@
     <tr style="background:rgb(252,178,22) " class="table table-striped">
         <th>ID</th>
         <th>AD-SOYAD</th>
-        <th>DETAY</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>YAZARIN KİTAPLARI</th>
 
     </tr>
     @foreach (var x in Model)
@@ -21,9 +21,11 @@
         <tr>
             <td>@x.ID</td>
             <td>@x.AD @x.SOYAD</td>
-            <td>@x.DETAY</td>
             <td><a href="/Yazar/YazarSil/@x.ID" class="btn btn-danger" onclick="return confirm('Gerçekten Silmek İstiyormusunuz ?')">Sil</a></td>
             <td><a href="/Yazar/YazarGetir/@x.ID" class="btn btn-primary">Güncelle</a></td>
+            <td>
+                <a href="/Yazar/YazarKitaplar/@x.ID" class="btn btn-default" style="background: #717782;color: white">Kitapları</a>
+            </td>
 
         </tr>
     }

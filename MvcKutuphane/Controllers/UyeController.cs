@@ -14,8 +14,6 @@ namespace MvcKutuphane.Controllers
         private DBKUTUPHANEEntities2 db = new DBKUTUPHANEEntities2();
         public ActionResult Index(int sayfa = 1)
         {
-            //var degerler = db.TBLUYELER.ToList();
-            //var degerler = db.TBLUYELER.ToString().ToPagedList(sayfa,10);
             var degerler = db.TBLUYELER.ToList().ToPagedList(sayfa, 10);
             return View(degerler);
         }
@@ -66,6 +64,14 @@ namespace MvcKutuphane.Controllers
 
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult UyeKitapGecmis(int id)
+        {
+            var book = db.TBLHAREKET.Where(x => x.UYE == id).ToList();
+            var member = db.TBLUYELER.Where(x => x.ID == id).Select(z => z.AD + " " + z.SOYAD).FirstOrDefault();
+            ViewBag.member = member;
+            return View(book);
         }
     }
 }
