@@ -24,6 +24,7 @@
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLHAKKIMIZDA" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLILETISIM" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLMESAJLAR" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="DBKUTUPHANEModel.TBLDUYURULAR" Width="1.5" PointX="10.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

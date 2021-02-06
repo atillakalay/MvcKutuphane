@@ -39,6 +39,7 @@ namespace MvcKutuphane.Models.Entity
         public virtual DbSet<TBLHAKKIMIZDA> TBLHAKKIMIZDA { get; set; }
         public virtual DbSet<TBLILETISIM> TBLILETISIM { get; set; }
         public virtual DbSet<TBLMESAJLAR> TBLMESAJLAR { get; set; }
+        public virtual DbSet<TBLDUYURULAR> TBLDUYURULAR { get; set; }
     
         public virtual ObjectResult<string> EnFazlaKitapYazar()
         {
