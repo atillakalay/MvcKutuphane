@@ -54,5 +54,10 @@ namespace MvcKutuphane.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("GirisYap", "Login");
         }
+
+        public PartialViewResult Partial1()
+        {
+            return PartialView();
+        }
     }
 }
