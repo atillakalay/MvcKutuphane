@@ -19,6 +19,26 @@ namespace MvcKutuphane.Controllers
         {
             var uyemail = (string)Session["Mail"];
             var degerler = dbkutuphaneEntities2.TBLUYELER.FirstOrDefault(z => z.MAIL == uyemail);
+            var d1 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.AD + " " + y.SOYAD).FirstOrDefault();
+            ViewBag.d1 = d1;
+            var d2 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.OKUL).FirstOrDefault();
+            ViewBag.d2 = d2;
+            var d3 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.FOTOGRAF).FirstOrDefault();
+            ViewBag.d3 = d3;
+            var d4 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.KULLANICIADI).FirstOrDefault();
+            ViewBag.d4 = d4;
+            var d5 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.MAIL).FirstOrDefault();
+            ViewBag.d5 = d5;
+            var d6 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.TELEFON).FirstOrDefault();
+            ViewBag.d6 = d6;
+            var uyeId = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.ID).FirstOrDefault();
+            var d7 = dbkutuphaneEntities2.TBLHAREKET.Count(x => x.UYE == uyeId);
+            ViewBag.d7 = d7;
+            var d8 = dbkutuphaneEntities2.TBLMESAJLAR.Count(x => x.ALICI == uyemail);
+            ViewBag.d8 = d8;
+            var d9 = dbkutuphaneEntities2.TBLDUYURULAR.Count();
+            ViewBag.d9 = d9;
+
             return View(degerler);
         }
         [HttpPost]

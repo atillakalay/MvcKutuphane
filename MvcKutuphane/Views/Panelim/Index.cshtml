@@ -14,7 +14,6 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>AdminLTE 3 | User Profile</title>
 
     <!-- Tell the browser to be responsive to screen width -->
 
@@ -50,13 +49,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Profile</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">User Profile</li>
-                    </ol>
+                    <h1>Profil</h1>
                 </div>
             </div>
         </div>
@@ -82,32 +75,32 @@
                             <div class="text-center">
 
                                 <img class="profile-user-img img-fluid img-circle"
-                                     src="../../dist/img/user4-128x128.jpg"
+                                     src="@ViewBag.d3"
                                      alt="User profile picture">
 
                             </div>
 
 
 
-                            <h3 class="profile-username text-center">Nina Mcintire</h3>
+                            <h3 class="profile-username text-center">@ViewBag.d1</h3>
 
 
 
-                            <p class="text-muted text-center">Software Engineer</p>
+                            <p class="text-muted text-center">Kütüphane Üyesi</p>
 
 
 
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b>Followers</b> <a class="float-right">1,322</a>
+                                    <b>Okunan Kitap :</b> <a class="float-right">@ViewBag.d7</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Following</b> <a class="float-right">543</a>
+                                    <b>Gelen Mesaj :</b> <a class="float-right">@ViewBag.d8</a>
                                 </li>
 
                                 <li class="list-group-item">
 
-                                    <b>Friends</b> <a class="float-right">13,287</a>
+                                    <b>Duyuru Sayısı :</b> <a class="float-right">@ViewBag.d9</a>
 
                                 </li>
 
@@ -115,7 +108,7 @@
 
 
 
-                            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                            <a href="#" class="btn btn-primary btn-block"><b>Gelen Kutusu</b></a>
 
                         </div>
 
@@ -130,7 +123,7 @@
 
                         <div class="card-header">
 
-                            <h3 class="card-title">About Me</h3>
+                            <h3 class="card-title">Hakkımda</h3>
 
                         </div>
 
@@ -138,14 +131,21 @@
 
                         <div class="card-body">
 
-                            <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                            <strong><i class="fas fa-book mr-1"></i>Eğitim</strong>
+                            <p class="text-muted">
+                                @ViewBag.d2
+                            </p>
+                            <hr>
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Telefon</strong>
+                            <p class="text-muted">@ViewBag.d6</p>
+                            <hr>
 
 
+
+                            <strong><i class="fas fa-pencil-alt mr-1"></i>Kullanıcı Ad :</strong>
 
                             <p class="text-muted">
-
-                                B.S. in Computer Science from the University of Tennessee at Knoxville
-
+                                @ViewBag.d4
                             </p>
 
 
@@ -154,47 +154,11 @@
 
 
 
-                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                            <strong><i class="far fa-file-alt mr-1"></i> E-mail :</strong>
 
 
 
-                            <p class="text-muted">Malibu, California</p>
-
-
-
-                            <hr>
-
-
-
-                            <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-
-
-                            <p class="text-muted">
-
-                                <span class="tag tag-danger">UI Design</span>
-
-                                <span class="tag tag-success">Coding</span>
-
-                                <span class="tag tag-info">Javascript</span>
-
-                                <span class="tag tag-warning">PHP</span>
-
-                                <span class="tag tag-primary">Node.js</span>
-
-                            </p>
-
-
-
-                            <hr>
-
-
-
-                            <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-
-
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                            <p class="text-muted">@ViewBag.d5</p>
 
                         </div>
 
