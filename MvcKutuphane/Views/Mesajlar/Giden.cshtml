@@ -9,7 +9,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Mailbox</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -134,7 +133,7 @@
                                                 <b>@x.KONU</b>
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@Convert.ToDateTime(x.TARIH)</td>
+                                            <td class="mailbox-date">@Convert.ToDateTime(x.TARIH).ToString("MM/dd/yyyy")</td>
                                         </tr>
                                     }
                                 </tbody>

@@ -133,7 +133,7 @@
                                                 <b>@x.KONU</b>
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@Convert.ToDateTime(x.TARIH)</td>
+                                            <td class="mailbox-date">@Convert.ToDateTime(x.TARIH).ToString("MM/dd/yyyy")</td>
                                         </tr>
                                     }
                                 </tbody>

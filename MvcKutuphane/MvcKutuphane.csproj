@@ -291,6 +291,7 @@
     <Content Include="Template\AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.css" />
     <Content Include="Template\AdminLTE-3.0.4\dist\css\alt\adminlte.plugins.min.css" />
     <Content Include="Template\AdminLTE-3.0.4\dist\img\AdminLTELogo.png" />
+    <Content Include="Template\AdminLTE-3.0.4\dist\img\Ati.jpg" />
     <Content Include="Template\AdminLTE-3.0.4\dist\img\avatar.png" />
     <Content Include="Template\AdminLTE-3.0.4\dist\img\avatar04.png" />
     <Content Include="Template\AdminLTE-3.0.4\dist\img\avatar2.png" />
