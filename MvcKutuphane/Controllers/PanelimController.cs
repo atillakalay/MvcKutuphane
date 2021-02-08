@@ -18,7 +18,8 @@ namespace MvcKutuphane.Controllers
         public ActionResult Index()
         {
             var uyemail = (string)Session["Mail"];
-            var degerler = dbkutuphaneEntities2.TBLUYELER.FirstOrDefault(z => z.MAIL == uyemail);
+            //var degerler = dbkutuphaneEntities2.TBLUYELER.FirstOrDefault(z => z.MAIL == uyemail);
+            var degerler = dbkutuphaneEntities2.TBLDUYURULAR.ToList();
             var d1 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.AD + " " + y.SOYAD).FirstOrDefault();
             ViewBag.d1 = d1;
             var d2 = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == uyemail).Select(y => y.OKUL).FirstOrDefault();
@@ -79,5 +80,13 @@ namespace MvcKutuphane.Controllers
         {
             return PartialView();
         }
+        public PartialViewResult Partial2()
+        {
+            var mail = (string) Session["Mail"];
+            var id = dbkutuphaneEntities2.TBLUYELER.Where(x => x.MAIL == mail).Select(y => y.ID).FirstOrDefault();
+            var uyebul = dbkutuphaneEntities2.TBLUYELER.Find(id);
+            return PartialView("Partial2",uyebul);
+        }
+
     }
 }

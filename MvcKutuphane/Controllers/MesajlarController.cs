@@ -38,5 +38,15 @@ namespace MvcKutuphane.Controllers
             var mesajlar = _dbkutuphaneEntities2.TBLMESAJLAR.Where(x => x.GONDEREN == uyemail).ToList();
             return View(mesajlar);
         }
+
+        public PartialViewResult PartialView1()
+        {
+            var uyemail = (string)Session["Mail"];
+            var gelenSayisi = _dbkutuphaneEntities2.TBLMESAJLAR.Where(x => x.ALICI == uyemail).Count();
+            ViewBag.d1 = gelenSayisi;
+            var gidenSayisi = _dbkutuphaneEntities2.TBLMESAJLAR.Count(x => x.GONDEREN == uyemail);
+            ViewBag.d2 = gidenSayisi;
+            return PartialView();
+        }
     }
 }

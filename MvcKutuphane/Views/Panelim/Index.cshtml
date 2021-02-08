@@ -1,17 +1,13 @@
-﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+﻿@using MvcKutuphane.Models.Entity
+@model List<TBLDUYURULAR>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
-
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
     <meta charset="utf-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -180,11 +176,11 @@
 
                             <ul class="nav nav-pills">
 
-                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Duyurular</a></li>
 
 
 
-                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
 
                             </ul>
 
@@ -202,97 +198,8 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="settings">
+                                    @Html.Action("Partial2", "Panelim")
 
-                                    @using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
-
-                                    {
-
-                                        <form class="form-horizontal">
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.FOTOGRAF, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <label for="inputName" class="col-sm-2 col-form-label">Okul</label>
-
-                                                <div class="col-sm-10">
-
-                                                    @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
-
-                                                </div>
-
-                                            </div>
-
-                                            <div class="form-group row">
-
-                                                <div class="offset-sm-2 col-sm-10">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="offset-sm-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-danger">Güncelle</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    }
                                 </div>
 
                                 <!-- /.tab-pane -->

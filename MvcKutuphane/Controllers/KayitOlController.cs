@@ -6,9 +6,11 @@ using System.Web.Mvc;
 using MvcKutuphane.Models.Entity;
 namespace MvcKutuphane.Controllers
 {
+    [AllowAnonymous]
     public class KayitOlController : Controller
     {
         // GET: KayitOl
+        
         DBKUTUPHANEEntities2 db = new DBKUTUPHANEEntities2();
         [HttpGet]
         public ActionResult Kayit()

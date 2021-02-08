@@ -4,27 +4,75 @@
     ViewBag.Title = "Kitaplarim";
     Layout = "~/Views/Shared/_LayoutPanel.cshtml";
 }
-<br />
-<h2>Kitap Geçmişim</h2>
-<br />
-<table class="table table-hover" style=margin-top: 15px>
-
-    <tr>
-        <th>KİTAP AD</th>
-        <th>ALIŞ TARİH</th>
-        <th>İADE TARİH</th>
-
-
-
-    </tr>
-    @foreach (var x in Model)
-    {
-        <tr>
-            <td>@x.TBLKITAP.AD</td>
-            <td>@Convert.ToDateTime(x.ALISTARIH).ToString("MMM/dd/yyyy") </td>
-            <td>@Convert.ToDateTime(x.IADETARIH).ToString("MMM/dd/yyyy")</td>
-
-
-        </tr>
-    }
-</table>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Simple Tables</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Template/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Template/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">KİTAP GEÇMİŞİ</h3>
+                                <div class="card-tools">
+                                    <div class="input-group input-group-sm" style="width: 150px;">
+                                        <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body table-responsive p-0">
+                                <table class="table table-hover text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th>KİTAP AD</th>
+                                            <th>ALIŞ TARİH</th>
+                                            <th>İADE TARİH</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var X in Model)
+                                        {
+                                            <tr>
+                                                <td>@X.TBLKITAP.AD</td>
+                                                <td>@Convert.ToDateTime(X.ALISTARIH).ToString("dd/MM/yyyy")</td>
+                                                <td>@Convert.ToDateTime(X.IADETARIH).ToString("dd/MM/yyyy")</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

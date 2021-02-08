@@ -15,7 +15,6 @@ namespace MvcKutuphane.Controllers
         private DBKUTUPHANEEntities2 dbkutuphaneEntities2 = new DBKUTUPHANEEntities2();
         public ActionResult GirisYap()
         {
-
             return View();
         }
 

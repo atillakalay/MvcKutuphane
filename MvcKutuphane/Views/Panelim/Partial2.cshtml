@@ -1,0 +1,73 @@
+﻿@model MvcKutuphane.Models.Entity.TBLUYELER
+@using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
+{
+    <form class="form-horizontal">
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.AD, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.SOYAD, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Kullanıcı Adı</label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(x => x.KULLANICIADI, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Şifre</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.SIFRE, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Fotoğraf</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.FOTOGRAF, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Okul</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.OKUL, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+                <button type="submit" class="btn btn-danger">Güncelle</button>
+            </div>
+        </div>
+    </form>
+}
